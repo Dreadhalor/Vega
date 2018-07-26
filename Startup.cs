@@ -1,6 +1,7 @@
 using System;
 using System.Data.Common;
 using System.Data.SqlClient;
+using AutoMapper;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -25,6 +26,9 @@ namespace Vega
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+          //Add automapper
+          services.AddAutoMapper();
+
           //add DbContext
           services.AddDbContext<VegaDbContext>(
             options => options.UseSqlServer(Configuration.GetConnectionString("Default"))

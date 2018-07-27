@@ -13,7 +13,7 @@ namespace Vega.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
-          migrationBuilder.Sql("DELETE FROM Features");
+          migrationBuilder.Sql("DELETE FROM Features WHERE Name IN ('Feature1', 'Feature2', 'Feature3')");
         }
     }
 }
